@@ -1,26 +1,138 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
+  --background: #66ff00;
   --foreground: #171717;
+  --base: #000000;
+  --text: #ffffff;
+  --highlights: #2b2323;
+  --highlights1: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-base: var(--base);
+  --color-text: var(--color-gray-50);
+  --color-background: #171717;
+  --color-highlights: var(--highlights);
+  --color-ocean-50: oklch(0.964 0.017 256.28);
+  --color-ocean-100: oklch(0.931 0.034 253.7);
+  --color-ocean-200: oklch(0.859 0.072 250.55);
+  --color-ocean-300: oklch(0.791 0.113 245.79);
+  --color-ocean-400: oklch(0.716 0.165 240.22);
+  --color-ocean-500: oklch(0.617 0.142 240.14);
+  --color-ocean-600: oklch(0.523 0.12 239.87);
+  --color-ocean-700: oklch(0.428 0.098 239.81);
+  --color-ocean-800: oklch(0.333 0.078 241.03);
+  --color-ocean-900: oklch(0.232 0.052 239.1);
+  --color-ocean-950: oklch(0.187 0.043 240.07);
+  --color-gray-50: #f1f1f1;
+  --color-gray-100: #e2e2e2;
+  --color-gray-200: #c6c6c6;
+  --color-gray-300: #ababab;
+  --color-gray-400: #919191;
+  --color-gray-500: #777777;
+  --color-gray-600: #5e5e5e;
+  --color-gray-700: #474747;
+  --color-gray-800: #303030;
+  --color-gray-900: #1b1b1b;
+  --color-gray-950: #111111;
+  --color-lime-50: oklch(0.958 0.092 132.37);
+  --color-lime-100: oklch(0.915 0.219 131.14);
+  --color-lime-200: oklch(0.835 0.222 130.86);
+  --color-lime-300: oklch(0.768 0.204 130.85);
+  --color-lime-400: oklch(0.676 0.18 130.99);
+  --color-lime-500: oklch(0.591 0.157 130.89);
+  --color-lime-600: oklch(0.499 0.133 130.86);
+  --color-lime-700: oklch(0.405 0.108 130.68);
+  --color-lime-800: oklch(0.313 0.083 131.24);
+  --color-lime-900: oklch(0.229 0.061 131.13);
+  --color-lime-950: oklch(0.174 0.047 130.24);
+  --color-red-50: oklch(0.958 0.021 17.6);
+  --color-red-100: oklch(0.926 0.038 17.9);
+  --color-red-200: oklch(0.847 0.084 18.98);
+  --color-red-300: oklch(0.774 0.133 20.58);
+  --color-red-400: oklch(0.703 0.188 23.26);
+  --color-red-500: oklch(0.628 0.258 29.23);
+  --color-red-600: oklch(0.535 0.219 29.23);
+  --color-red-700: oklch(0.435 0.179 29.23);
+  --color-red-800: oklch(0.336 0.138 29.23);
+  --color-red-900: oklch(0.245 0.101 29.23);
+  --color-red-950: oklch(0.187 0.077 29.23);
+  --color-orange-50: oklch(0.966 0.02 58.09);
+  --color-orange-100: oklch(0.933 0.042 59.11);
+  --color-orange-200: oklch(0.867 0.094 65.01);
+  --color-orange-300: oklch(0.802 0.171 73.26);
+  --color-orange-400: oklch(0.705 0.15 73.48);
+  --color-orange-500: oklch(0.61 0.13 73.52);
+  --color-orange-600: oklch(0.512 0.109 72.96);
+  --color-orange-700: oklch(0.427 0.091 73.9);
+  --color-orange-800: oklch(0.331 0.07 73.46);
+  --color-orange-900: oklch(0.236 0.05 74.06);
+  --color-orange-950: oklch(0.178 0.038 73.13);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  background: var(--base);
+  color: var(--text);
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  color: var(--color-gray-200);
+}
+
+.terminal-tab-container {
+  overflow-y: auto; /* Triggers the scrollbar */
+
+  /* 1. Modern W3C Standard (Firefox & modern Chrome/Edge) */
+  scrollbar-width: thin; /* Options: auto, thin, none */
+  scrollbar-color: #888888 #2e2e2e; /* thumb color | track color */
+}
+
+h1 {
+  font-size: x-large;
+  font-weight: 600;
+}
+h2 {
+  font-size: larger;
+  font-weight: 400;
+}
+p {
+  font-size: small;
+}
+
+@keyframes skills-carousel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-skills-carousel {
+  animation: skills-carousel 20s linear infinite;
+}
+
+.animate-skills-carousel:hover {
+  animation-play-state: paused;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
