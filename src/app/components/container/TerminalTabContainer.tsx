@@ -3,7 +3,7 @@
 import React, { createRef, Ref, useContext, createContext } from 'react';
 import TerminalTabHeader from './TerminalTabHeader';
 
-const TerminalTabContext = createContext<React.RefObject<HTMLDivElement> | null>(null);
+const TerminalTabContext = createContext<React.RefObject<HTMLDivElement | null> | null>(null);
 
 const TerminalTabContainer = ({ children }: { children: React.ReactNode }) => {
   const refTerminalTab = createRef<HTMLDivElement>();
