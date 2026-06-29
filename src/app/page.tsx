@@ -2,6 +2,7 @@ import TerminalTabContainer from './components/container/TerminalTabContainer';
 import Education from './pages/Education';
 import Hero from './pages/Hero';
 import Skills from './pages/Skills';
+import WorkingExperience from './pages/WorkingExperience';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         <Skills />
         <Education />
+        <WorkingExperience />
       </TerminalTabContainer>
     </main>
   );

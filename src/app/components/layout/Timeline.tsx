@@ -1,8 +1,11 @@
 'use client';
 
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { RefObject, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TerminalTabContainer, { useTerminalTabContext } from '../container/TerminalTabContainer';
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const DASH_HEIGHT = 14;
 const GAP = 10;
@@ -35,6 +38,7 @@ interface TimelineProps {
 
 export default function Timeline({ children }: TimelineProps) {
   const scope = useRef<HTMLDivElement>(null);
+  const terminalTabRef = useTerminalTabContext();
   const [dashCount, setDashCount] = useState(0);
   const [lineHeight, setLineHeight] = useState(0);
 
@@ -68,9 +72,17 @@ export default function Timeline({ children }: TimelineProps) {
 
   useGSAP(
     () => {
-      if (dashCount === 0) return;
+      if (!scope.current || dashCount === 0 || !terminalTabRef?.current) return;
 
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: scope.current,
+          scroller: terminalTabRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          invalidateOnRefresh: true,
+        },
+      });
 
       tl.from('.timeline-dash', {
         scaleY: 0,
@@ -112,7 +124,7 @@ export default function Timeline({ children }: TimelineProps) {
   );
 
   return (
-    <div ref={scope} className="relative flex flex-col font-mono">
+    <div ref={scope} className="relative flex flex-col font-mono timeline-parent">
       <div
         className="absolute overflow-hidden"
         style={{

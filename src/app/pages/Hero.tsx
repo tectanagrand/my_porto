@@ -24,9 +24,18 @@ const Hero = () => {
             PostgreSQL, Docker, and AWS.
           </p>
           <div className="flex flex-col gap-1 text-sm py-4">
-            <a href="#">/linked-in</a>
-            <a href="#">/github</a>
-            <a href="#">/cv</a>
+            <a href="https://www.linkedin.com/in/rafael-tektano/" target="_blank">
+              /linked-in
+            </a>
+            <a href="https://github.com/tectanagrand" target="_blank">
+              /github
+            </a>
+            <a
+              href="https://drive.google.com/file/d/17-T4icmBCbkqof6MiSs0Q_UufcAabNHo/view?usp=sharing"
+              target="_blank"
+            >
+              /cv
+            </a>
           </div>
         </div>
       </div>
