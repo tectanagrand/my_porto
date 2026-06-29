@@ -2,12 +2,13 @@ import React from 'react'
 
 const HeroTitleImage = () => {
   return (
-  <pre className="text-[3pt] md:text-[10.01pt] text-gray-50 leading-none whitespace-pre-wrap overflow-hidden md:w-[780px] w-[235px] my-2 md:mx-2">                                                                                                                                                                                          
- ▄▄▄▄▄    ▄▄   ▄▄▄▄▄▄   ▄▄   ▄▄▄▄▄▄ ▄            ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄    ▄▄▄▄▄▄▄▄   ▄▄   ▄▄   ▄  ▄▄▄▄ 
- █   ▀█   ██   █        ██   █      █               █    █      █  ▄▀    █      ██   █▀▄  █ ▄▀  ▀▄
- █▄▄▄▄▀  █  █  █▄▄▄▄▄  █  █  █▄▄▄▄▄ █               █    █▄▄▄▄▄ █▄█      █     █  █  █ █▄ █ █    █
- █   ▀▄  █▄▄█  █       █▄▄█  █      █               █    █      █  █▄    █     █▄▄█  █  █ █ █    █
- █    ▀ █    █ █      █    █ █▄▄▄▄▄ █▄▄▄▄▄          █    █▄▄▄▄▄ █   ▀▄   █    █    █ █   ██  █▄▄█ </pre>
+    <pre className="my-2 max-w-full overflow-x-auto whitespace-pre font-mono leading-none text-[4px] text-gray-50 sm:text-[5px] md:mx-2 md:max-w-[780px] md:max-w-[780px] md:text-[10px]">
+      {`▄▄▄▄▄▄    ▄▄   ▄▄▄▄▄▄   ▄▄   ▄▄▄▄▄▄ ▄            ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄    ▄▄▄▄▄▄▄▄   ▄▄   ▄▄   ▄  ▄▄▄▄ 
+█   ▀█   ██   █        ██   █      █               █    █      █  ▄▀    █      ██   █▀▄  █ ▄▀  ▀▄
+█▄▄▄▄▀  █  █  █▄▄▄▄▄  █  █  █▄▄▄▄▄ █               █    █▄▄▄▄▄ █▄█      █     █  █  █ █▄ █ █    █
+█   ▀▄  █▄▄█  █       █▄▄█  █      █               █    █      █  █▄    █     █▄▄█  █  █ █ █    █
+█    ▀ █    █ █      █    █ █▄▄▄▄▄ █▄▄▄▄▄          █    █▄▄▄▄▄ █   ▀▄   █    █    █ █   ██  █▄▄█`}
+    </pre>
   )
 }
 
