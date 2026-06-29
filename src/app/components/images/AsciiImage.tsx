@@ -2,7 +2,7 @@ import React from 'react'
 
 const AsciiImage = () => {
   return (
-    <div className="max-w-[160px] md:w-[198px] m-2">
+    <div className="max-w-[160px] md:max-w-[198px] m-2">
 
 <pre className="text-gray-50 md:text-[2.21pt] text-[1.8pt] tracking-tight leading-none whitespace-pre-wrap overflow-hidden w-full">
 ..................................................................................................................
